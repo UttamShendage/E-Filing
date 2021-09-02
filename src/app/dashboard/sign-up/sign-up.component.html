@@ -1,0 +1,60 @@
+<div class="container">
+    <form [formGroup]="signup" (ngSubmit)="submit();" class="form-Horizontal">
+    <div class="row">
+        <div class="form-group">
+        <h4>
+            Getting started is easy!</h4>
+    </div>
+    </div>
+    <div class="col-sm-3">
+
+    </div>
+    
+    <div class="form-group row">
+        <label for="first" class="col-sm-2 col-form-label">First Name</label> 
+        <div class="col-sm-6"> 
+        <input type="text" class="form-control">
+        <div *ngIf="signup.get('lname').invalid && 
+    (signup.get('fname').dirty || signup.get('fname').touched)" class="alert alert-danger">
+
+     <div *ngIf="signup.get('fname')?.errors?.required">
+        Email is required.
+    </div>
+    </div>
+</div>
+</div>
+<div class="form-group row">
+    <label for="last" class="col-sm-2 col-form-label">Last Name</label> 
+    <div class="col-sm-6"> 
+    <input type="text" class="form-control" formControlName="lname">
+    <div *ngIf="signup.get('lname').invalid && 
+    (signup.get('lname').dirty || signup.get('lname').touched)" class="alert alert-danger">
+
+     <div *ngIf="signup.get('lname')?.errors?.required">
+        Email is required.
+    </div>
+</div>
+</div>
+</div>
+<div class="form-group row">
+    <label for="email" class="col-sm-2 col-form-label" formControlName="email">Email</label> 
+    <div class="col-sm-6"> 
+    <input type="email" class="form-control" formControlName="email">
+    <div *ngIf="signup.get('email').invalid && 
+        (signup.get('email').dirty || signup.get('email').touched)" class="alert alert-danger">
+
+         <div *ngIf="signup.get('email')?.errors?.required">
+            Email is required.
+        </div>
+</div>
+</div>
+</div>
+<div class="form-group row justify-content-center">
+    <div class="col-sm-6"> 
+        <button class="btn btn-primary">Sign Up</button>
+</div>
+</div>
+
+
+    </form>
+</div>

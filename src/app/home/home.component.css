@@ -1,0 +1,30 @@
+.content {
+    overflow: hidden;
+  /* background-color: #f1f1f1; */
+  background-color: darkgray;
+    padding: 20px 10px;
+    color: white;
+    /*height: 140px; */
+  }
+  .content p:hover {
+    /*background-color: black; */
+    color:red;
+  }
+  .mb-4{
+    text-align: left;
+  }
+
+  p.dotted {
+    border-top: 1px dotted black;
+  }
+
+  @media screen and (max-width: 500px) {
+    .content p {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .content-right {
+      float: none;
+    }
+  }

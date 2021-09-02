@@ -1,0 +1,8 @@
+.container{
+    background-color: darkgray;
+    max-width: 1295px;
+    height: 1200px;
+}
+@media screen and (max-width: 500px) {
+    
+  }

@@ -1,0 +1,61 @@
+<div class="container">
+<form [formGroup]="login" (ngSubmit)="onsubmit();">
+  <div class="row">
+    <div class="col">
+      <br><br>
+    </div>
+  </div>
+    <div class="row mb-3">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-6">
+        <input type="email" class="form-control" formControlName="email">
+        
+        <div *ngIf="login.get('email').invalid && 
+        (login.get('email').dirty || login.get('email').touched)" class="alert alert-danger">
+
+         <div *ngIf="login.get('email')?.errors?.required">
+            Email is required.
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="form-group">
+    <div class="row mb-3">
+      <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+      <div class="col-sm-6">
+        <input type="password" class="form-control" formControlName="password">
+      </div>
+    </div>
+    </div>
+    <div class="row mb-3">
+    <label for="select11" class="col-sm-2 col-form-label">State/Circuit:</label>
+    <div class="col-sm-6">
+            <select class="form-control" formControlName="state">
+
+            <option value="was">Select state</option>
+            <option *ngFor="let st of state" [ngValue]="state">
+                {{st}}
+            </option>
+            </select>
+          </div>
+          </div> 
+          <div class="row mb-3">  
+        <div class="col-sm-8" style="text-align: center;">    
+    <button type="submit" class="btn btn-primary">Login </button>
+  </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-md-10" style="text-align: right;">
+    <a class="btn btn-link text-white" routerLink="technical"> Forgot password?
+    </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <br><br>
+    </div>
+  </div>
+  
+  </form>  
+  
+</div>
